@@ -1,9 +1,11 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext ,useEffect} from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import axios from '../config/axios'
 import { UserContext } from '../context/user.context'
 
 const Login = () => {
+
+
 
 
     const [ email, setEmail ] = useState('')
@@ -31,7 +33,7 @@ const Login = () => {
             console.log(err.response.data)
         })
     }
-
+    
     return (
         <div className="min-h-screen flex items-center justify-center bg-gray-900">
             <div className="bg-gray-800 p-8 rounded-lg shadow-lg w-full max-w-md">
