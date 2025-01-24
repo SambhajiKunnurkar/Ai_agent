@@ -97,7 +97,7 @@ const Project = () => {
                 children={messageObject.text}
                 options={{
                     overrides: {
-                        // code: SyntaxHighlightedCode,
+                        code: SyntaxHighlightedCode,
                     },
                 }}
             />
@@ -180,18 +180,8 @@ const Project = () => {
                                 <small className='opacity-65 text-xs'>{msg.sender.email}</small>
                                 <div className='text-sm'>
                                     {msg.sender._id === 'ai' ?
-                                    <div
-                                    className='overflow-auto bg-slate-950 text-white rounded-sm p-2'>
-                                        
-                                        <Markdown
-                                        children={msg.message}
-                                        options={{
-                                          overrides: {
-                                            code: SyntaxHighlightedCode,
-                                          }
-                                        }}
-                                        /></div>
-                                        : <p>{msg.message}</p>}
+                                        WriteAiMessage(msg.message) 
+                                        :msg.message}
                                 </div>
                             </div>
                         ))}
